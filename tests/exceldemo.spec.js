@@ -64,11 +64,11 @@ test("Upload updated excel file",async({page})=>{
     await page.getByPlaceholder("Email").fill("darsanarajan11@gmail.com")
     await page.getByRole('button',{name:'Continue'}).click()
     // Wait for to get success pop-up
-   // await page.waitForTimeout(5000);
+    await page.waitForTimeout(5000);
     // Verify Success message
     await expect(page.locator('.success-box')).toBeVisible();
     await expect(page.getByText('Success')).toBeVisible();
-    await page.pause()
+    //await page.pause()
 })
 //go to selenium qa
 //table

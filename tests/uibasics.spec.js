@@ -29,7 +29,7 @@ test("Browser context playwright test",async({browser})=>{
     console.log(await cardtitle.nth(1).textContent()) //to get 2nd element
     const alltitle = await cardtitle.allTextContents() //to get all element
     console.log(alltitle)
-    await page.pause();
+    //await page.pause();
 })
 //6 test means including 3 browser , check in config.js
 
@@ -83,7 +83,7 @@ test('UI controls',async({page})=>{
     await page.locator("#button-one").click()
     //Verifying the entered message
     await expect(page.locator("#message-one")).toHaveText("Your Message : Hello world")
-    await page.pause()
+    //await page.pause()
 })
 
 //child windoww and new tabs handling
@@ -100,7 +100,7 @@ test('child window and new tab',async({browser})=>{
     const newTab = await context.newPage()
     await newTab.goto("https://www.github.com")
     console.log("Child window and new tab opened successfully")
-    await page.pause()
+    //await page.pause()
 })
 //Special locators
 test('Special locators',async({page})=>{
@@ -130,7 +130,7 @@ test('Special locators',async({page})=>{
     await page.getByPlaceholder("Message").fill("Hello World")
     await page.getByRole("button",{name:'Show Message'}).click()
     await expect(page.getByText("Your Message : Hello World")).toBeVisible()
-    await page.pause()
+    //await page.pause()
 })
 //Calendar validations
 const date = 12
@@ -154,5 +154,5 @@ test('Calendar validation',async({page})=>{
     await page.getByText(targetYear.toString(),{exact:true}).click()
     await page.locator(".month").nth(month-1).click()
     await page.getByText(date.toString(),{exact:true}).click()
-    await page.pause()
+    //await page.pause()
 })
