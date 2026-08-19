@@ -29,7 +29,7 @@ test("Popup validations",async({page})=>{
     const framePage = page.frameLocator("#frame1")
     console.log(await framePage.locator("#sampleHeading").textContent())
     await expect(framePage.locator("#sampleHeading")).toHaveText("This is a sample page")
-    await page.pause()
+    //await page.pause()
 })
 
 //Visual comparision
@@ -47,5 +47,5 @@ test('Screenshot',async({page})=>{
     await expect(page.locator(".error-message-container.error")).toBeVisible()
     await page.locator('.error-message-container.error').screenshot({path:'error.png'})
     await page.screenshot({path:'error1.png'})
-    await page.pause()
+    //await page.pause()
 })
